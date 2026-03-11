@@ -29,20 +29,38 @@ def sort_matrix_diagonals(mat):
 
 def main():
     # example input
-    input_mat = [
+    input_mat0 = [
         [3, 3, 1, 1],
         [2, 2, 1, 2],
         [1, 1, 1, 2]
     ]
 
-    print("Original Matrix:")
-    for row in input_mat:
+    print("original example matrix:")
+    for row in input_mat0:
         print(row)
 
-    sorted_mat = sort_matrix_diagonals(input_mat)
+    sorted_mat0 = sort_matrix_diagonals(input_mat0)
 
-    print("\nSorted Diagonal Matrix:")
-    for row in sorted_mat:
+    print("\nsorted diagonal example matrix:")
+    for row in sorted_mat0:
+        print(row)
+
+    print("-------------------")
+
+    input_mat1 = [
+        [5, 6, 3, 1],
+        [3, 2, 3, 4],
+        [1, 4, 2, 5]
+    ]
+
+    print("test matrix 1:")
+    for row in input_mat1:
+        print(row)
+
+    sorted_mat1 = sort_matrix_diagonals(input_mat1)
+
+    print("\nsorted test matrix 1:")
+    for row in sorted_mat1:
         print(row)
 
 if __name__ == "__main__":
