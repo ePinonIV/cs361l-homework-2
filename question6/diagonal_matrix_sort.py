@@ -1,13 +1,14 @@
+# Sorts the diagonals of m x n matrix in ascending order
+# returns matrix of combined diagonals
+
 from collections import defaultdict
-import math # not needed?
 
 def sort_matrix_diagonals(mat):
-    """
-    Sorts each diagonal of an m x n matrix in ascending order.
-    """
+    # check if matrix is valid
     if not mat or not mat[0]:
         return mat
         
+    # get dimensions
     m, n = len(mat), len(mat[0])
     diagonals = defaultdict(list)
     
@@ -16,7 +17,7 @@ def sort_matrix_diagonals(mat):
         for j in range(n):
             diagonals[i - j].append(mat[i][j])
             
-    # sort descending for O(1) popping from the end
+    # sort descending, popping from the end
     for key in diagonals:
         diagonals[key].sort(reverse=True)
         
@@ -28,6 +29,8 @@ def sort_matrix_diagonals(mat):
     return mat
 
 def main():
+    print("-------------------")
+
     # example input
     input_mat0 = [
         [3, 3, 1, 1],
@@ -45,7 +48,7 @@ def main():
     for row in sorted_mat0:
         print(row)
 
-    print("-------------------")
+    print("\n-------------------\n")
 
     input_mat1 = [
         [5, 6, 3, 1],
@@ -62,6 +65,8 @@ def main():
     print("\nsorted test matrix 1:")
     for row in sorted_mat1:
         print(row)
+
+    print("-------------------")
 
 if __name__ == "__main__":
     main()
